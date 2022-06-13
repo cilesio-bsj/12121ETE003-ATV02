@@ -102,6 +102,11 @@ int main(int argc, char *argv[])
 	reg |= (GPIO_OTYPER_PP << GPIO_OT13_SHIFT);
 	*pGPIOC_OTYPER = reg;
 
+	reg = *pGPIOA_PUPDR;
+	reg &= ~(GPIO_PUPDR0_MASK);
+	reg |= (GPIO_PUPDR_PULLUP << GPIO_PUPDR0_SHIFT);
+	*pGPIOA_PUPDR = reg;
+
 	reg = *pGPIOC_PUPDR;
 	reg &= ~(GPIO_PUPDR13_MASK);
 	reg |= (GPIO_PUPDR_NONE << GPIO_PUPDR13_SHIFT);
