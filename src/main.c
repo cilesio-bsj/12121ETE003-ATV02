@@ -67,6 +67,11 @@ int main(int argc, char *argv[])
 	// Ponteiros para registradores
 	uint32_t *pRCC_AHB1ENR = (uint32_t *)STM32_RCC_AHB1ENR;
 	
+	uint32_t *pGPIOA_MODER = (uint32_t *)STM32_GPIOA_MODER;
+	uint32_t *pGPIOA_OTYPER = (uint32_t *)STM32_GPIOA_OTYPER;
+	uint32_t *pGPIOA_PUPDR = (uint32_t *)STM32_GPIOA_PUPDR;
+	uint32_t *pGPIOA_IDR = (uint32_t *)STM32_GPIOA_IDR;
+
 	uint32_t *pGPIOC_MODER = (uint32_t *)STM32_GPIOC_MODER;
 	uint32_t *pGPIOC_OTYPER = (uint32_t *)STM32_GPIOC_OTYPER;
 	uint32_t *pGPIOC_PUPDR = (uint32_t *)STM32_GPIOC_PUPDR;
