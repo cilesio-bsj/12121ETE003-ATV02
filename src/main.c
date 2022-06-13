@@ -32,6 +32,10 @@
 #define GPIO_MODER_OUTPUT 			(1)
 #define GPIO_MODER_ALT 				  (2)
 #define GPIO_MODER_ANALOG 			(3)
+
+#define GPIO_MODER0_SHIFT  (0)
+#define GPIO_MODER0_MASK 	(3 << GPIO_MODER0_SHIFT)
+
 #define GPIO_MODER13_SHIFT 			(26)
 #define GPIO_MODER13_MASK 			(3 << GPIO_MODER13_SHIFT)
 
