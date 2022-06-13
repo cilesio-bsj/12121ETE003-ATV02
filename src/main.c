@@ -1,8 +1,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
-/********** DEFINIÇÕES DO LED(PC13) **********/
 #define STM32_RCC_BASE 				    0x40023800
+#define STM32_GPIOA_BASE 			    0x40020000U //pág 54 datasheet
 #define STM32_GPIOC_BASE 		    	0x40020800U //pág 54 datasheet
 #define STM32_RCC_AHB1ENR_OFFSET	0x0030
 
@@ -42,7 +42,6 @@
 #define GPIO_BSRR_SET(n) (1 << (n))
 #define GPIO_BSRR_RST(n) (1 << (n + 16))
 
-/********** Fim das definições do LED **********/
 
 int main(int argc, char *argv[])
 {
