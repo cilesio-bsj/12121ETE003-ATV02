@@ -87,6 +87,11 @@ int main(int argc, char *argv[])
 	reg |= RCC_AHB1ENR_GPIOCEN;
 	*pRCC_AHB1ENR = reg;
 
+	reg = *pGPIOA_MODER;
+	reg &= ~(GPIO_MODER0_MASK);
+	reg |= (GPIO_MODER_INPUT << GPIO_MODER0_SHIFT);
+	*pGPIOA_MODER = reg;
+
 	reg = *pGPIOC_MODER;
 	reg &= ~(GPIO_MODER13_MASK);
 	reg |= (GPIO_MODER_OUTPUT << GPIO_MODER13_SHIFT);
