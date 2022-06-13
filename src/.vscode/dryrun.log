@@ -1,0 +1,9 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/root/semb1-workspace/12121ETE003-ATV1/src'
+arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb startup.c -o startup.o
+ 
+arm-none-eabi-gcc -c -mcpu=cortex-m4 -mthumb main.c -o main.o
+arm-none-eabi-gcc -nostdlib -T stm32f411-rom.ld startup.o main.o -o blinky.elf
+arm-none-eabi-objcopy blinky.elf -O binary blinky.bin
+make: Leaving directory '/root/semb1-workspace/12121ETE003-ATV1/src'
+ 
