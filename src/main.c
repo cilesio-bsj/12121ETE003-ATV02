@@ -113,15 +113,25 @@ int main(int argc, char *argv[])
 	*pGPIOC_PUPDR = reg;
 
 
-	while(1)
-	{
-	
-	*pGPIOC_BSRR = GPIO_BSRR_SET(13);
-	for (uint32_t i = 0; i < 1322500; i++);
-	*pGPIOC_BSRR = GPIO_BSRR_RST(13);
-	for (uint32_t i = 0; i < 1322500; i++);
+  void Atrasar_ms(int t_ms)
+  {
+      for (uint32_t i = 0; i < 1323*t_ms; i++); //Medido no olho
+  }
 
-	};
+  int tempo_ms;
+  while (1)
+  {
+
+	if ((*pGPIOA_IDR & (uint16_t)0x0001) != (uint16_t)0x0001) {
+		tempo_ms  = 250;
+	}else{
+		tempo_ms  = 500;
+	}
+    *pGPIOC_BSRR = GPIO_BSRR_SET(13);
+	  Atrasar_ms(tempo_ms);
+    *pGPIOC_BSRR = GPIO_BSRR_RST(13);
+	  Atrasar_ms(tempo_ms);
+  }
 
 	return EXIT_SUCCESS;
 }
